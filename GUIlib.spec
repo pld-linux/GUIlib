@@ -56,7 +56,7 @@ Statyczna biblioteka GUIlib.
 %setup -q
 
 # remove old libtool.m4 from acinclude.m4
-head -165 acinclude.m4 > acinclude.tmp
+head -n 165 acinclude.m4 > acinclude.tmp
 mv -f acinclude.tmp acinclude.m4
 
 %build
