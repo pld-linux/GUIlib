@@ -9,7 +9,10 @@ Source0:	http://www.libsdl.org/projects/GUIlib/src/%{name}-%{version}.tar.gz
 # Source0-md5:	9d5d88cdb42dd8611e31f5e3f8a3084e
 URL:		http://www.libsdl.org/projects/GUIlib/
 BuildRequires:	SDL-devel >= 1.0.1
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libstdc++-devel
+BuildRequires:	libtool >= 2:1.4d
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
