@@ -1,12 +1,13 @@
 Summary:	Simple GUI framework for use with SDL
 Summary(pl):	Prosty szkielet GUI do u¿ywania z SDL
 Name:		GUIlib
-Version:	1.1.1
+Version:	1.1.2
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/GUIlib/src/%{name}-%{version}.tar.gz
-# Source0-md5:	9d5d88cdb42dd8611e31f5e3f8a3084e
+# Source0-md5:	831d03b8e5bd3898b368d78e65c2ec2e
+Patch0:		%{name}-gcc4.patch
 URL:		http://www.libsdl.org/projects/GUIlib/
 BuildRequires:	SDL-devel >= 1.0.1
 BuildRequires:	autoconf
@@ -32,7 +33,9 @@ widgetów.
 Summary:	GUIlib header files
 Summary(pl):	Pliki nag³ówkowe GUIlib
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
+Requires:	SDL-devel >= 1.0.1
+Requires:	libstdc++-devel
 
 %description devel
 GUIlib header files.
@@ -44,7 +47,7 @@ Pliki nag³ówkowe GUIlib.
 Summary:	GUIlib static library
 Summary(pl):	Statyczna biblioteka GUIlib
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 GUIlib static library.
@@ -54,10 +57,9 @@ Statyczna biblioteka GUIlib.
 
 %prep
 %setup -q
+%patch0 -p1
 
-# remove old libtool.m4 from acinclude.m4
-head -n 165 acinclude.m4 > acinclude.tmp
-mv -f acinclude.tmp acinclude.m4
+rm -f acinclude.m4
 
 %build
 %{__libtoolize}
@@ -86,15 +88,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGES README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libGUI-*.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/libGUI.so
+%{_libdir}/libGUI.la
 %{_includedir}/GUI
 %{_examplesdir}/%{name}-%{version}
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libGUI.a
