@@ -1,0 +1,15 @@
+--- GUIlib-1.1.2/GUI_menu.h.orig	2001-11-20 20:57:12.000000000 +0100
++++ GUIlib-1.1.2/GUI_menu.h	2006-05-20 02:37:27.609982250 +0200
+@@ -39,9 +39,9 @@
+   virtual void AddSubitem(GUI_Menuitem *newitem);
+   virtual GUI_Menuitem* GetSubItem(int Aid);
+ 
+-  GUI_status GUI_Submenu:: MouseDown(int x, int y, int button);
+-  GUI_status GUI_Submenu::MouseUp(int x,int y,int button);
+-  GUI_status GUI_Submenu::MouseMotion(int x,int y,Uint8 state);
++  GUI_status MouseDown(int x, int y, int button);
++  GUI_status MouseUp(int x,int y,int button);
++  GUI_status MouseMotion(int x,int y,Uint8 state);
+ 
+   inline virtual int GetSubmenuId()
+     {return submenuid;}
