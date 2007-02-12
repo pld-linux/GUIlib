@@ -1,5 +1,5 @@
 Summary:	Simple GUI framework for use with SDL
-Summary(pl):	Prosty szkielet GUI do uøywania z SDL
+Summary(pl.UTF-8):   Prosty szkielet GUI do u≈ºywania z SDL
 Name:		GUIlib
 Version:	1.1.2
 Release:	1
@@ -22,16 +22,16 @@ flexible, but is by no means a complete windowing system. It contains
 a C++ GUI class with a very rudimentary C interface, and a set of
 useful widget classes.
 
-%description -l pl
+%description -l pl.UTF-8
 To jest bardzo prosty szkielet GUI (graficznego interfejsu
-uøytkownika) do uøywania z SDL. Jest bardzo elastyczny, ale w øaden
-sposÛb nie jest pe≥nym systemem okienkowym. Zawiera klasÍ GUI w C++
+u≈ºytkownika) do u≈ºywania z SDL. Jest bardzo elastyczny, ale w ≈ºaden
+spos√≥b nie jest pe≈Çnym systemem okienkowym. Zawiera klasƒô GUI w C++
 z bardzo podstawowym interfejsem w C oraz zestaw przydatnych klas
-widgetÛw.
+widget√≥w.
 
 %package devel
 Summary:	GUIlib header files
-Summary(pl):	Pliki nag≥Ûwkowe GUIlib
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe GUIlib
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	SDL-devel >= 1.0.1
@@ -40,19 +40,19 @@ Requires:	libstdc++-devel
 %description devel
 GUIlib header files.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe GUIlib.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe GUIlib.
 
 %package static
 Summary:	GUIlib static library
-Summary(pl):	Statyczna biblioteka GUIlib
+Summary(pl.UTF-8):   Statyczna biblioteka GUIlib
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 GUIlib static library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka GUIlib.
 
 %prep
