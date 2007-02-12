@@ -1,5 +1,5 @@
 Summary:	Simple GUI framework for use with SDL
-Summary(pl.UTF-8):   Prosty szkielet GUI do używania z SDL
+Summary(pl.UTF-8):	Prosty szkielet GUI do używania z SDL
 Name:		GUIlib
 Version:	1.1.2
 Release:	1
@@ -31,7 +31,7 @@ widgetów.
 
 %package devel
 Summary:	GUIlib header files
-Summary(pl.UTF-8):   Pliki nagłówkowe GUIlib
+Summary(pl.UTF-8):	Pliki nagłówkowe GUIlib
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	SDL-devel >= 1.0.1
@@ -45,7 +45,7 @@ Pliki nagłówkowe GUIlib.
 
 %package static
 Summary:	GUIlib static library
-Summary(pl.UTF-8):   Statyczna biblioteka GUIlib
+Summary(pl.UTF-8):	Statyczna biblioteka GUIlib
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
