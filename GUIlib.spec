@@ -1,19 +1,18 @@
 Summary:	Simple GUI framework for use with SDL
 Summary(pl.UTF-8):	Prosty szkielet GUI do używania z SDL
 Name:		GUIlib
-Version:	1.1.2
+Version:	1.2.1
 Release:	1
-License:	GPL
+License:	Public Domain
 Group:		Libraries
 Source0:	http://www.libsdl.org/projects/GUIlib/src/%{name}-%{version}.tar.gz
-# Source0-md5:	831d03b8e5bd3898b368d78e65c2ec2e
-Patch0:		%{name}-gcc4.patch
+# Source0-md5:	a0114b925d79d6c66161e24cbeaa88b1
 URL:		http://www.libsdl.org/projects/GUIlib/
-BuildRequires:	SDL-devel >= 1.0.1
+BuildRequires:	SDL-devel >= 1.2
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
-BuildRequires:	libtool >= 2:1.4d
+BuildRequires:	libtool >= 2:1.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,7 +33,7 @@ Summary:	GUIlib header files
 Summary(pl.UTF-8):	Pliki nagłówkowe GUIlib
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	SDL-devel >= 1.0.1
+Requires:	SDL-devel >= 1.2
 Requires:	libstdc++-devel
 
 %description devel
@@ -57,9 +56,8 @@ Statyczna biblioteka GUIlib.
 
 %prep
 %setup -q
-%patch0 -p1
 
-rm -f acinclude.m4
+%{__rm} acinclude.m4
 
 %build
 %{__libtoolize}
@@ -87,8 +85,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGES README
-%attr(755,root,root) %{_libdir}/libGUI-*.so.*.*.*
+%doc CHANGES COPYING README
+%attr(755,root,root) %{_libdir}/libGUI-1.2.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libGUI-1.2.so.0
 
 %files devel
 %defattr(644,root,root,755)
